@@ -28,10 +28,12 @@ input[31:0] a,b;
 output reg [31:0] result = 33'b0;
 output reg flagC = 1'b0;
 output reg flagZ = 1'b0;
-parameter [3:0] ADD  = 4'b0000,   //CONG
+	parameter [3:0] 		 //Phep toan so hoc
+					 ADD  = 4'b0000,        //CONG
 					 SUB  = 4'b0001,	//TRU
 					 MUL  = 4'b0010,	//MUL
 					 DIV  = 4'b0011,        //DIV
+					 //Phep toan logic
 					 AND  = 4'b0100,	//AND
 					 OR   = 4'b0101,	//OR
 					 NAND = 4'b0110,	//NAND
@@ -39,8 +41,8 @@ parameter [3:0] ADD  = 4'b0000,   //CONG
 					 XOR  = 4'b1000,	//XOR
 					 IN   = 4'b1001,	//Tang A len 1
 				         RE   = 4'b1010,	//Giam A di 1
-					 NOT  = 4'b1011,	//NOT				 
-					 //Phep toan logic
+					 NOT  = 4'b1011,	//NOT	
+					 // Phep dich			 
 					 SL   = 4'b1100, 	// Dich trai
 					 SR   = 4'b1101, 	//Dich phai
 					 //Phep toan so sanh
