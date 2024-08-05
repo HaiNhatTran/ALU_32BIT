@@ -33,20 +33,28 @@ Từ hình trên ta có thể thấy khi ALUControl[0] bằng 0 thì ALU thực 
 
  ![image](https://github.com/user-attachments/assets/3c02b11e-8ab6-41c5-adcf-7abab94b69a5)
 
-Tính toán tràn số (overflow) đối với phép cộng và trừ:
+- Tính toán tràn số (overflow) đối với phép cộng và trừ:
+- 
   •	Sum[31] ^ A[31]: So sánh bit dấu của kết quả (Sum[31]) với bit dấu của toán hạng đầu tiên (A[31]). Nếu chúng khác nhau, có khả năng đã xảy ra tràn số.
+  
   •	~(ALUControl[0] ^ B[31] ^ A[31]): Xác định điều kiện tràn số cho phép cộng và trừ. Đây là điều kiện kiểm tra xem phép toán là phép cộng hay phép trừ, và nếu các bit dấu của hai toán hạng đầu vào (A và B) và bit dấu của kết quả (Sum) không tương ứng đúng, có thể dẫn đến tràn số.
+  
       o	ALUControl[0]: Xác định phép cộng hoặc trừ (nếu ALUControl[0] là 0 thì là phép cộng, còn nếu là 1 thì là phép trừ).
+  
   •	~ALUControl[1]: Cờ tràn số chỉ được áp dụng cho phép cộng và trừ. ALUControl[1] phân biệt giữa các phép toán, vì vậy ~ALUControl[1] đảm bảo phép toán là phép cộng hoặc trừ.
   
-Tính toán cờ dư cho phép cộng và trừ:
+- Tính toán cờ dư cho phép cộng và trừ:
 
   •	~ALUControl[1]: Đảm bảo chỉ tính toán cờ dư khi phép toán là phép cộng (hoặc phép trừ, nếu ALUControl[1] là 0 thì đây là phép cộng, còn nếu là 1 thì là phép trừ).
+  
   •	Cout: Carry-out từ phép cộng hoặc trừ.
 
-Kiểm tra nếu kết quả bằng 0:
+- Kiểm tra nếu kết quả bằng 0:
+- 
   •	~Result: Lật tất cả các bit của Result.
+  
   •	&: Toán tử AND tất cả các bit của ~Result. Nếu tất cả các bit của ~Result là 1, tức là Result là 0, và Zero sẽ được thiết lập.
 
-Kiểm tra bit dấu của kết quả:
+- Kiểm tra bit dấu của kết quả:
+- 
   •	Result[31]: Bit quan trọng nhất của Result (bit dấu). Nếu là 1, nghĩa là kết quả là số âm theo quy ước dấu bù 2.
