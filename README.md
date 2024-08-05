@@ -10,16 +10,16 @@ Trong bài tập này, chúng ta sẽ phát triển một ALU nhận hai đầu 
 
 ALU sẽ tạo ra một đầu ra 32-bit gọi là 'Result' và một cờ 1-bit bổ sung gọi là 'Zero'. Cờ 'Zero' sẽ được đặt thành 'logic-1' nếu tất cả các bit của 'Result' đều bằng 0. Các phép toán khác nhau sẽ được chọn bởi một tín hiệu điều khiển 4-bit gọi là 'ALUControl' theo bảng phái trên. 
 Ví dụ,  Khi 'ALUControl' là 0000, ALU sẽ thực hiện phép cộng hai đầu vào A và B.
- Khi 'ALUControl' là 0001, ALU sẽ thực hiện phép trừ giữa A và B.
-Khi 'ALUControl' là 0010, ALU sẽ thực hiện phép toán AND bit giữa A và B.
-Khi 'ALUControl' là 0011, ALU sẽ thực hiện phép toán OR bit giữa A và B.
-Khi 'ALUControl' là 0100, ALU sẽ thực hiện phép nhân giữa A và B.
-Khi 'ALUControl' là 0101, ALU sẽ thực hiện phép chia lấy phần nguyên giữa A và B.
-Khi 'ALUControl' là 0110, ALU sẽ thực hiện dịch phải 1 bit trên A.
-Khi 'ALUControl' là 0111, ALU sẽ thực hiện dịch trái 1 bit trên A.
-Khi 'ALUControl' là 1000, ALU sẽ thực hiện so sánh giữa A và B.	
-Khi 'ALUControl' là 1009, ALU sẽ lấy bit dấu của tổng (sum) của A và B.
-Khi 'ALUControl' là 1010, ALU sẽ thực hiện phép chia lấy phần dư giữa A và B.                                                     1.2 Sơ đồ khối
+ - Khi 'ALUControl' là 0001, ALU sẽ thực hiện phép trừ giữa A và B.
+ - Khi 'ALUControl' là 0010, ALU sẽ thực hiện phép toán AND bit giữa A và B.
+ - Khi 'ALUControl' là 0011, ALU sẽ thực hiện phép toán OR bit giữa A và B.
+ - Khi 'ALUControl' là 0100, ALU sẽ thực hiện phép nhân giữa A và B.
+ - Khi 'ALUControl' là 0101, ALU sẽ thực hiện phép chia lấy phần nguyên giữa A và B.
+ - Khi 'ALUControl' là 0110, ALU sẽ thực hiện dịch phải 1 bit trên A.
+ - Khi 'ALUControl' là 0111, ALU sẽ thực hiện dịch trái 1 bit trên A.
+ - Khi 'ALUControl' là 1000, ALU sẽ thực hiện so sánh giữa A và B.	
+ - Khi 'ALUControl' là 1009, ALU sẽ lấy bit dấu của tổng (sum) của A và B.
+ - Khi 'ALUControl' là 1010, ALU sẽ thực hiện phép chia lấy phần dư giữa A và B.                                                     1.2 Sơ đồ khối
  
 1.2 Sơ đồ khối
 Đầu tiên, hãy xem xét các lệnh khác nhau. Có thể thấy rằng chúng ta có các loại lệnh: các lệnh cộng, trừ, nhân, chia lấy phần nguyên, chia lấy phần dư và so sánh là các phép toán số học, lệnh AND và OR là các phép toán logic và lệnh dịch trái, dịch phải. Tương ứng với các ALUControl thích hợp
